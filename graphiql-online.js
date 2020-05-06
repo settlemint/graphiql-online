@@ -32923,9 +32923,10 @@ var _validUrl = __webpack_require__(429);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var options = { method: 'post', headers: { 'Content-Type': 'application/json' } };
-var endpoint = 'https://api.graph.cool/simple/v1/ciyz901en4j590185wkmexyex'; // Initial
+var url = new URL(window.location.href);
+var endpoint = url.searchParams.get('endpoint'); // Initial
 
-var defaultQuery = '\n# Welcome to GraphiQL\n#\n# GraphiQL is an in-browser tool for writing, validating, and\n# testing GraphQL queries.\n#\n# Type queries into this side of the screen, and you will see intelligent\n# typeaheads aware of the current GraphQL type schema and live syntax and\n# validation errors highlighted within the text.\n#\n# GraphQL queries typically start with a "{" character. Lines that starts\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: "value") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#       Run Query:  Ctrl-Enter (or press the play button above)\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n#\n# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #\n# Default endpoint is an instance of https://www.graph.cool/\n# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #\n\nquery {\n  allUsers {\n    id\n    name\n  }\n}\n';
+var defaultQuery = '\n{\n  block(number: 1) {\n    transactions {\n      hash\n    }\n    timestamp\n    difficulty\n    totalDifficulty\n    gasUsed\n    gasLimit\n    hash\n    nonce\n    ommerCount\n    logsBloom\n    mixHash\n    ommerHash\n    extraData\n    stateRoot\n    receiptsRoot\n    transactionCount\n    transactionsRoot\n    ommers {\n      hash\n    }\n    ommerAt(index: 1) {\n      hash\n    }\n    miner {\n      address\n    }\n    parent {\n      hash\n    }\n  }\n}\n';
 
 var App = function (_React$Component) {
   (0, _inherits3['default'])(App, _React$Component);
@@ -33007,13 +33008,9 @@ var App = function (_React$Component) {
             _graphiql2['default'].Logo,
             null,
             _react2['default'].createElement(
-              'a',
-              { href: 'https://github.com/lucasconstantino/graphiql-online', title: 'See GraphiQL Online on GitHub' },
-              _react2['default'].createElement(
-                'svg',
-                { 'aria-hidden': 'true', className: 'octicon octicon-mark-github', height: '32', version: '1.1', viewBox: '0 0 16 16', width: '32' },
-                _react2['default'].createElement('path', { fillRule: 'evenodd', d: 'M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z' })
-              )
+              'svg',
+              { 'aria-hidden': 'true', className: 'octicon octicon-mark-github', height: '32', version: '1.1', viewBox: '0 0 16 16', width: '32' },
+              _react2['default'].createElement('path', { fillRule: 'evenodd', d: 'M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z' })
             )
           ),
           _react2['default'].createElement(
